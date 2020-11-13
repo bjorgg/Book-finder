@@ -29,12 +29,10 @@ app.get('/books', (req, res) => {
     // Fetching the API. Fetch() method returns a promise.
     fetch(`https://www.googleapis.com/books/v1/volumes?key=${apiKey}&orderBy=${orderBy}&maxResults=20&q=${query}`)
     // Then() methods to handle the promise. The promise will resolve into a response object
-    .then(r=>{  
-        // Return json method to handle the respective type of data.
-        return r.json()
-    })
+    // Return json method to handle the respective type of data.
+    .then(r=>r.json())
     // Sending the data back to the client.
-    .then(function(d){
+    .then((d) => {
         console.log(d);
         res.send(d);
     })    

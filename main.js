@@ -1,11 +1,14 @@
+// Getting elements from the DOM and storing them in global variables
 const searchBar = document.getElementById('search-bar');
 const searchBtn = document.getElementById('search-btn');
 const clearBtn = document.querySelector('#clear-btn');
 const contentDiv = document.getElementById("books");
 const radios = document.querySelectorAll('.radio-input');
- 
+
+
 // Event listener on the input, enables you to press the enter key to search
 searchBar.addEventListener("keyup", e => {
+    // Conditional ternary operator instead of if/else statement
     (e.code === 'Enter') ? searchBtn.click() : ""
 }); 
  
@@ -17,6 +20,8 @@ clearBtn.addEventListener("click", () => {
 })
 
 
+// Listen to the search button. If the input is empty, do nothing else get the input
+// value and the radio button value and call the getBooks function.
 searchBtn.addEventListener('click', () => {
     if (!searchBar || !searchBar.value) return;
     const searchStr = searchBar.value;
@@ -24,27 +29,34 @@ searchBtn.addEventListener('click', () => {
     getBooks(searchStr, orderBy);
 });
 
+
+// Function to get the books from the server. 
 function getBooks (searchStr, orderBy) {
+    // Fetch from the local host. Fetch() method returns a promise.
     fetch(`http://localhost:3000/books?q=${searchStr}&orderBy=${orderBy}`)
+    // Then() methods to handle the promise. The promise will resolve into a response object
+    // Return json method to handle the respective type of data.
     .then(r=>r.json())
+    // Calling the displayBooks function and pass the data in.
     .then(data => {
         console.log(data);
-
         const books = data.items;
         displayBooks(books);
     })
+    // Catching errors
     .catch(error => {
         console.error(error);
     });
 }
 
 
-
+// Function to display books in the DOM
 function displayBooks(books) {
     contentDiv.innerHTML ="";
-
+    // Mapping the book result array and returning elements and values
     const bookEl = books.map(book => {
         let bookImage;
+        // Conditional ternary operator instead of if/else statement to handle if image link is missing in result
         (book.volumeInfo.imageLinks)
            ? bookImage = `<img class="book-cover" src="${book.volumeInfo.imageLinks.thumbnail}"></img>`
            : bookImage = `<div class="no-img">No image available</div>`
@@ -71,11 +83,12 @@ function displayBooks(books) {
         </div>
     `;
     });
-
+    // Joining the map result and displaying it in DOM.
     contentDiv.innerHTML = bookEl.join("");   
 }
 
-
+// Listen for chance in the radio buttons to sort the results by relevance or newest.
+// Then call the getBooks function
 radios.forEach(radio => radio.addEventListener('change', () => {
     if (!searchBar || !searchBar.value) return;
      const searchStr = searchBar.value;
