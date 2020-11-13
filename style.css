@@ -1,0 +1,123 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    padding: 3rem;
+    font-size: 16px;
+    background-color: #f5f4f2;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Righteous', cursive;
+    color:  #02323A;
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 1.6rem;
+    line-height: 2rem;
+    font-weight: 600;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 2rem 1rem 2rem;
+    align-items: center;
+}
+
+#search-bar {
+    width: 28rem;
+    height: 2.3rem;
+    padding: .4rem .6rem;
+    border: none;
+    border-radius: .3rem;
+    background: url(images/poweredby.png) no-repeat 98% 60%;
+    background-size: 3rem;
+    background-color: #ffffff;
+    font-family: 'Raleway', sans-serif;
+}
+
+.btn-wrapper {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 2rem;
+}
+
+button {
+    margin: 0 .8rem;
+    height: 2rem;
+    padding: 0 1.2rem;
+    border: none;
+    background-color: #02323A;
+    border-radius: .3rem;
+    color: #f5f4f2;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+}
+
+button:hover {
+    background-color: #7F7601;
+    cursor: pointer;
+}
+
+.sort-wrapper {
+    padding-bottom: 1.2rem;
+    text-align: center;
+    font-size: .9rem;
+}
+
+.radio-input {
+    margin-left: .6rem;
+    margin-right: .1rem;
+}
+
+
+#books {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.book {
+    width: 45%;
+    padding: 2rem;
+    border-radius: .5rem;
+    font-size: 0.9rem;
+    line-height: 1.3rem;
+    display: flex;
+    margin-bottom: 2rem;
+    align-items: center;
+    background-color: white;
+}
+
+.book-cover {
+    width: 8rem;
+    height: auto;
+    margin-right: 2rem;
+}
+
+.no-img {
+    width: 8rem;
+    height: auto;
+    margin-right: 2rem;
+}
+
+.info-wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.google-btn {
+    width: 5rem;
+}
+.google-btn:hover {
+    transform: scale(1.1);
+}

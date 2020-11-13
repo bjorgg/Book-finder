@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>Book finder</title>
+</head>
+<body> 
+    <header>
+        <h1>Book finder</h1>
+    </header>
+    <main>
+        <div class="search-container">   
+            <input id="search-bar" type="text" placeholder="Title, author, keyword ..." value="">
+        </div>
+        <div class="sort-wrapper">
+            <span> <strong>Sort by:</strong> </span>
+            <input class="radio-input" type="radio" id="relevance" name="sort" value="relevance" checked>
+            <label for="relevance">Relevance</label>
+            <input class="radio-input" type="radio" id="newest" name="sort" value="newest">
+            <label for="newest">Newest</label>
+        </div>
+        <div class="btn-wrapper">
+            <button id="search-btn">Search books</button>
+            <button id="clear-btn">Clear results</button>         
+        </div>
+
+        <div id="books">
+            
+        </div>
+
+    </main>
+    <script src="main.js"></script>
+</body>
+</html>
