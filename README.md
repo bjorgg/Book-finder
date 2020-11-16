@@ -6,4 +6,5 @@ You can search by title, author, keyword etc. You can clear the results and choo
 I created a backend server using npm package manager, express framework and some modules. That's in another repo and was deployed separately with Vercel. This repo contains the client side/frontend. I used functional programming in both. You can find comments in the JavaScript code for further explaination.
 
 Here is a link to the backend server repo: <https://github.com/bjorgg/JavaScript-Backend-server.git>
-Here is a link to the live version: <>
+
+Here is a link to the live version: <https://bjorgg.github.io/Book-finder/>
