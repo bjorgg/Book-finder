@@ -4,7 +4,8 @@ const searchBtn = document.getElementById('search-btn');
 const clearBtn = document.querySelector('#clear-btn');
 const contentDiv = document.getElementById("books");
 const radios = document.querySelectorAll('.radio-input');
-
+// The backend server url stored in a variable
+const apiUrl = "https://javascript-backend-server.vercel.app";
 
 // Event listener on the input, enables you to press the enter key to search
 searchBar.addEventListener("keyup", e => {
@@ -33,7 +34,7 @@ searchBtn.addEventListener('click', () => {
 // Function to get the books from the server. 
 function getBooks (searchStr, orderBy) {
     // Fetch from the local host. Fetch() method returns a promise.
-    fetch(`http://localhost:3000/books?q=${searchStr}&orderBy=${orderBy}`)
+    fetch(`${apiUrl}/books?q=${searchStr}&orderBy=${orderBy}`)
     // Then() methods to handle the promise. The promise will resolve into a response object
     // Return json method to handle the respective type of data.
     .then(r=>r.json())
