@@ -1,7 +1,7 @@
 {
-  "name": "javascript_api_consumption",
+  "name": "javascript_book_finder",
   "version": "1.0.0",
-  "description": "",
+  "description": "In this school project I combined three JavaScript assignments into one; API Consumption, Functional programming and Modules, Package Managers and Bundlers. I created a book finder application and used the Google books API.\r You can search by title, author, keyword etc. You can clear the results and choose to sort them by relevance or newest. Every result has a link to Google preview of that book.",
   "main": "main.js",
   "dependencies": {
     "cors": "^2.8.5",
@@ -16,5 +16,14 @@
     "start": "node server.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bjorgg/Book-finder.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/bjorgg/Book-finder/issues"
+  },
+  "homepage": "https://github.com/bjorgg/Book-finder#readme"
 }
